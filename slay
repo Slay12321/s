@@ -1,689 +1,185 @@
-local Atlas = loadstring(game:HttpGet("https://siegehub.net/Atlas.lua"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Charmed | Noah*#750", "Ocean")
 
-local test = Atlas.new({
-    Name = "Mystic Falls Script";
-    ConfigFolder = "AtlasScript";
-    Credit = "Made by Noah*34750";
-    Color = Color3.fromRGB(164, 53, 90);
-    FullName = "Test Script";
-    UseLoader = true;
-    Bind = "LeftControl";
-    CheckKey = function(e) -- this can be nil to disable key checking
-        return e == "josh"
-    end;
-    Discord = "https://discord.gg/yxXX7bxp"
-})
+-- Unlocker
+local Main = Window:NewTab("Main")
+local MainSection = Main:NewSection("Main")
 
-local p1 = test:CreatePage("Misc")
-local p2 = test:CreatePage("Witch")
+MainSection:NewButton("Temporal Status", "Z", function()
+     game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(key)
+ if key == "z" then
+    local args = {
+        [1] = "Temporal"
+    }
 
-local s1 = p1:CreateSection("Witch Keybinds")
-local s2 = p1:CreateSection("s 2")
-local s3 = p2:CreateSection("Section 1")
-local s4 = p2:CreateSection("Section 2")
+    game:GetService("ReplicatedStorage").AbilityRemote:FireServer(unpack(args))
 
-s1:CreateButton({
-    Name = "Motus"; -- required: name of element
-    Callback = function() -- required: function to be called when button is pressed
-        game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(key)
-            if key == "e" then
-                local args = {
-                    [1] = "Magic",
-                    [2] = {
-                        [1] = "Motus",
-                        [2] = false
-                    }
-                }
-                
-                game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-                
-            end
-           end)
-    end
-})
-
-s1:CreateButton({
-    Name = "Mass Snap"; -- required: name of element
-    Callback = function() -- required: function to be called when button is pressed
-        game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(key)
-            if key == "P" then
-                local args = {
-                    [1] = "Magic",
-                    [2] = {
-                        [1] = "SnapAll"
-                    }
-                }
-                
-                game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-                
-            end
-           end)
-    end
-})
-
-s1:CreateButton({
-    Name = "contoris"; -- required: name of element
-    Callback = function() -- required: function to be called when button is pressed
-        local Players = game:GetService("Players")
-        local Respawn = game:GetService("ReplicatedStorage").Events.Respawn
-        local function chatted(msg)
-            if msg == "contoris" then
-                local Anim = Instance.new("Animation")
-                Anim.AnimationId = "rbxassetid://5414902308"
-                local Plr = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
-                Plr:Play()
-                Plr:AdjustSpeed()
-                Plr:Destroy()
-        
-                local Plr = game.Players.LocalPlayer
-        
-                for i, Player in pairs(game.Players:GetPlayers()) do
-                    if Player.Character ~= nil and Player ~= Plr then
-                        local mag = (Player.Character.UpperTorso.Position - Plr.Character.UpperTorso.Position).magnitude
-                        if mag < 20 then
-                            local Target = Player.Character or Player.CharacterAdded:Wait()
-                            local args = {
-                                [1] = "Magic",
-                                [2] = {
-                                    [1] = "Motus",
-                                    [2] = true,
-                                    [3] = Target
-                                }
-                            }
-        
-                            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-                        end
-                    end
-                end
-                wait(0.75)
-                local Plr = game.Players.LocalPlayer
-        
-                for i, Player in pairs(game.Players:GetPlayers()) do
-                    if Player.Character ~= nil and Player ~= Plr then
-                        local mag = (Player.Character.UpperTorso.Position - Plr.Character.UpperTorso.Position).magnitude
-                        if mag < 20 then
-                            local Target = Player.Character or Player.CharacterAdded:Wait()
-        
-                            local args = {
-                                [1] = "Magic",
-                                [2] = {
-                                    [1] = "Freeze",
-                                    [2] = Target
-                                }
-                            }
-                           game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-                            local args = {
-                                [1] = "Magic",
-                                [2] = {
-                                    [1] = "Freeze",
-                                    [2] = Target
-                                }
-                            }
-                           game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-                            local args = {
-                                [1] = "Magic",
-                                [2] = {
-                                    [1] = "Freeze",
-                                    [2] = Target
-                                }
-                            }
-                           game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-                           local args = {
-                                [1] = "Magic",
-                                [2] = {
-                                    [1] = "Freeze",
-                                    [2] = Target
-                                }
-                            }
-                           game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-                            local args = {
-                                [1] = "Magic",
-                                [2] = {
-                                    [1] = "Freeze",
-                                    [2] = Target
-                                }
-                            }
-                           game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-                            local args = {
-                                [1] = "Magic",
-                                [2] = {
-                                    [1] = "Freeze",
-                                    [2] = Target
-                                }
-                            }
-                           game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-                            local args = {
-                                [1] = "Magic",
-                                [2] = {
-                                    [1] = "Freeze",
-                                    [2] = Target
-                                }
-                            }
-                           game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-                            local args = {
-                                [1] = "Magic",
-                                [2] = {
-                                    [1] = "Freeze",
-                                    [2] = Target
-                                }
-                            }
-                           game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-                            local args = {
-                                [1] = "Magic",
-                                [2] = {
-                                    [1] = "Freeze",
-                                    [2] = Target
-                                }
-                            }
-                           game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-                           local args = {
-                                [1] = "Push",
-                                [2] = {
-                                    [1] = Target
-                                }
-                            }
-        
-                            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-                            local args = {
-                                [1] = "Push",
-                                [2] = {
-                                    [1] = Target
-                                }
-                            }
-        
-                            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-                            local args = {
-                                [1] = "Push",
-                                [2] = {
-                                    [1] = Target
-                                }
-                            }
-        
-                            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-                            local args = {
-                                [1] = "Push",
-                                [2] = {
-                                    [1] = Target
-                                }
-                            }
-        
-                            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-                            local args = {
-                                [1] = "Magic",
-                                [2] = {
-                                    [1] = "BreakLeg",
-                                    [2] = Target
-                                }
-                            }
-        
-                            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-                            local args = {
-                                [1] = "Magic",
-                                [2] = {
-                                    [1] = "BreakLeg",
-                                    [2] = Target
-                                }
-                            }
-        
-                            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-                            local args = {
-                                [1] = "Magic",
-                                [2] = {
-                                    [1] = "BreakLeg",
-                                    [2] = Target
-                                }
-                            }
-        
-                            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-                            local args = {
-                                [1] = "Magic",
-                                [2] = {
-                                    [1] = "BreakLeg",
-                                    [2] = Target
-                                }
-                            }
-        
-                            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-                            local args = {
-                                [1] = "Magic",
-                                [2] = {
-                                    [1] = "FireSpell",
-                                    [2] = Target
-                                }
-                            }
-        
-                            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-                            local args = {
-                                [1] = "Magic",
-                                [2] = {
-                                    [1] = "FireSpell",
-                                    [2] = Target
-                                }
-                            }
-        
-                            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-                            local args = {
-                                [1] = "Magic",
-                                [2] = {
-                                    [1] = "FireSpell",
-                                    [2] = Target
-                                }
-                            }
-        
-                            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-                            local args = {
-                                [1] = "Magic",
-                                [2] = {
-                                    [1] = "FireSpell",
-                                    [2] = Target
-                                }
-                            }
-        
-                            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-                            local args = {
-                                [1] = "Magic",
-                                [2] = {
-                                    [1] = "FireSpell",
-                                    [2] = Target
-                                }
-                            }
-        
-                            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-                            local args = {
-                                [1] = "Magic",
-                                [2] = {
-                                    [1] = "FireSpell",
-                                    [2] = Target
-                                }
-                            }
-        
-        
-                            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-                            local args = {
-                                [1] = "Magic",
-                                [2] = {
-                                    [1] = "FireSpell",
-                                    [2] = Target
-                                }
-                            }
-        
-                            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-                                               local args = {
-                                [1] = "Magic",
-                                [2] = {
-                                    [1] = "FireSpell",
-                                    [2] = Target
-                                }
-                            }
-        
-                            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-                            local args = {
-                                [1] = "Magic",
-                                [2] = {
-                                    [1] = "FireSpell",
-                                    [2] = Target
-                                }
-                            }
-        
-                            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-                           local args = {
-                                [1] = "Magic",
-                                [2] = {
-                                    [1] = "FireSpell",
-                                    [2] = Target
-                                }
-                            }
-        
-                            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-                           local args = {
-                                [1] = "Magic",
-                                [2] = {
-                                    [1] = "FireSpell",
-                                    [2] = Target
-                                }
-                            }
-        
-                            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-                            local args = {
-                                [1] = "Magic",
-                                [2] = {
-                                    [1] = "FireSpell",
-                                    [2] = Target
-                                }
-                            }
-        
-                            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-                           local args = {
-                                [1] = "Magic",
-                                [2] = {
-                                    [1] = "Explosion",
-                                    [2] = Player.Character.UpperTorso.Position
-                                }
-                            }
-        
-                            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-                           local args = {
-                                [1] = "Magic",
-                                [2] = {
-                                    [1] = "Explosion",
-                                    [2] = Player.Character.UpperTorso.Position
-                                }
-                            }
-        
-                            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-                           local args = {
-                                [1] = "Magic",
-                                [2] = {
-                                    [1] = "Explosion",
-                                    [2] = Player.Character.UpperTorso.Position
-                                }
-                            }
-        
-                            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-                           local args = {
-                                [1] = "Magic",
-                                [2] = {
-                                    [1] = "Explosion",
-                                    [2] = Player.Character.UpperTorso.Position
-                                }
-                            }
-        
-                            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-                            local args = {
-                                [1] = "Magic",
-                                [2] = {
-                                    [1] = "FireSpell",
-                                    [2] = Target
-                                }
-                            }
-        
-                            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-                            local args = {
-                                [1] = "Magic",
-                                [2] = {
-                                    [1] = "FireSpell",
-                                    [2] = Target
-                                }
-                            }
-        
-                            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-                            local args = {
-                                [1] = "Magic",
-                                [2] = {
-                                    [1] = "FireSpell",
-                                    [2] = Target
-                                }
-                            }
-        
-                            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-                            local args = {
-                                [1] = "Magic",
-                                [2] = {
-                                    [1] = "BloodChoke",
-                                    [2] = Target
-                                }
-                            }
-        
-                            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-                        end
-                    end
-                end
-            end
-        end
-        
-        Players.LocalPlayer.Chatted:Connect(chatted)
-        wait()
-    end
-})
-
-s1:CreateButton({
-    Name = "canido"; -- required: name of element
-    Callback = function() -- required: function to be called when button is pressed
-        local Players = game:GetService("Players")
-        local Respawn = game:GetService("ReplicatedStorage").Events.Respawn
-        local function chatted(msg)
-            if msg == "canido" then
-                local Anim = Instance.new("Animation")
-                Anim.AnimationId = "rbxassetid://5414902308"
-                local Plr = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
-                Plr:Play()
-                Plr:AdjustSpeed()
-                Plr:Destroy()
-        
-                local Plr = game.Players.LocalPlayer
-        
-                for i, Player in pairs(game.Players:GetPlayers()) do
-                    if Player.Character ~= nil and Player ~= Plr then
-                        local mag = (Player.Character.UpperTorso.Position - Plr.Character.UpperTorso.Position).magnitude
-                        if mag < 20 then
-                            local Target = Player.Character or Player.CharacterAdded:Wait()
-                            local args = {
-                                [1] = "Magic",
-                                [2] = {
-                                    [1] = "Motus",
-                                    [2] = true,
-                                    [3] = Target
-                                }
-                            }
-        
-                            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-                        end
-                    end
-                end
-                wait(0.75)
-                local Plr = game.Players.LocalPlayer
-        
-                for i, Player in pairs(game.Players:GetPlayers()) do
-                    if Player.Character ~= nil and Player ~= Plr then
-                        local mag = (Player.Character.UpperTorso.Position - Plr.Character.UpperTorso.Position).magnitude
-                        if mag < 20 then
-                            local Target = Player.Character or Player.CharacterAdded:Wait()
-        
-                            local args = {
-                                [1] = "Push",
-                                [2] = {
-                                    [1] = Target
-                                }
-                            }
-        
-                            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-                            local args = {
-                                [1] = "Push",
-                                [2] = {
-                                    [1] = "Target",
-                                }
-                            }
-        
-                            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-                        end
-                    end
-                end
-            end
-        end
-        
-        Players.LocalPlayer.Chatted:Connect(chatted)
-        wait()
-        
-    end
-})
-
-s1:CreateButton({
-    Name = "choke (Davina)"; -- required: name of element
-    Callback = function() -- required: function to be called when button is pressed
-        local Players = game:GetService("Players")
-        local Respawn = game:GetService("ReplicatedStorage").Events.Respawn
-        local function chatted(msg)
-            if msg == "choke" then
-                local Anim = Instance.new("Animation")
-                Anim.AnimationId = "rbxassetid://9206510874"
-                local Plr = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
-                Plr:Play()
-                Plr:AdjustSpeed()
-                Plr:Destroy()
-        
-                local Plr = game.Players.LocalPlayer
-        
-                for i, Player in pairs(game.Players:GetPlayers()) do
-                    if Player.Character ~= nil and Player ~= Plr then
-                        local mag = (Player.Character.UpperTorso.Position - Plr.Character.UpperTorso.Position).magnitude
-                        if mag < 20 then
-                            local Target = Player.Character or Player.CharacterAdded:Wait()
-                            local args = {
-                                [1] = "Magic",
-                                [2] = {
-                                    [1] = "BloodChoke",
-                                    [2] = Target
-                                }
-                            }
-        
-                            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-                        end
-                    end
-                end
-                wait(0.75)
-                local Plr = game.Players.LocalPlayer
-        
-                for i, Player in pairs(game.Players:GetPlayers()) do
-                    if Player.Character ~= nil and Player ~= Plr then
-                        local mag = (Player.Character.UpperTorso.Position - Plr.Character.UpperTorso.Position).magnitude
-                        if mag < 20 then
-                            local Target = Player.Character or Player.CharacterAdded:Wait()
-        
-                            local args = {
-                                [1] = "Magic",
-                                [2] = {
-                                    [1] = "Bloodchoke",
-                                    [2] = Target
-                                }
-                            }
-        
-                            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-                            local args = {
-                                [1] = "Magic",
-                                [2] = {
-                                    [1] = "BloodChoke",
-                                    [2] = Target
-                                }
-                            }
-        
-                            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-                        end
-                    end
-                end
-            end
-        end
-        
-        Players.LocalPlayer.Chatted:Connect(chatted)
-        wait()
-        
-    end
-})
-
-s1:CreateTextBox({
-    Name = "TextBox"; -- required: name of element
-    Flag = "MyTextBox"; -- required: unique flag name to use
-    Callback = function(inputtedText,enterPressed) -- function to be called when the textbox's focus is lost
-        print("TextBox:",inputtedText,enterPressed)
-    end;
-    DefaultText = "DefaultText"; -- required: text that will be in the textbox when there is no configurations saved or config saving is disabled
-    PlaceholderText = "No Text"; -- optional: placeholder text that will show when no text is written
-    TabComplete = function(inputtedText) -- optional: function to be called when the player presses the tab button while the textbox is in focus. The replaced text will be whatever this function returns, if it returns nil, the text will not change
-        if inputtedText=="josh1" then
-            
-        end
-    end;
-    ClearTextOnFocus = true; -- optional: whether to clear text when the textbox is focused, default is false
-    -- Scroll to the bottom of the page to read more about the following two:
-    Warning = "This has a warning"; -- optional: this argument is used in all elements (except for Body) and will indicate text that will appear when the player hovers over the warning icon
-    WarningIcon = 12345; -- optional: ImageAssetId for warning icon, will only be used if Warning is not nil, default is yellow warning icon.
-})
-
-s2:CreateInteractable({
-    Name = "Infinite Yield"; -- required: name of element
-    ActionText = "Execute"; -- required: text in the interactable button
-    Callback = function() -- function to be called when the interactable is activated
-        loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
-    end;
-    -- Scroll to the bottom of the page to read more about the following two:
-    Warning = "This has a warning"; -- optional: this argument is used in all elements (except for Body) and will indicate text that will appear when the player hovers over the warning icon
-    WarningIcon = 12345; -- optional: ImageAssetId for warning icon, will only be used if Warning is not nil, default is yellow warning icon.
-})
-
-s3:CreateKeybind({
-    Name = "Motus"; -- required: name of element
-    Flag = "Keybind"; -- required: unique flag name to use for element
-    Default = "dY"; -- required: keycode name that will be used when config saving is disabled or there is no saved configs
-    Callback = function(key) -- optional: function to be called when the keybind is changed by the player
-        print("Keybind changed to",key.Name)
-    end;
-    KeyPressed = function() -- optional: function to be called when the keybind is pressed by their player (handles InputBegan for you basically)
-       print(pressed)
-    end;
-    -- Scroll to the bottom of the page to read more about the following two:
-    Warning = "This has a warning"; -- optional: this argument is used in all elements (except for Body) and will indicate text that will appear when the player hovers over the warning icon
-    WarningIcon = 12345; -- optional: ImageAssetId for warning icon, will only be used if Warning is not nil, default is yellow warning icon.
-})
-
-local MyDropdown = s4:CreateDropdown({
-    Name = "Dropdown (with item selecting)"; -- required: name of element
-    Callback = function(item) -- required: function to be called an item in the dropdown is activated
-        print("Dropdown button pressed:",item)
-    end;
-    Options = {"Apple","Orange","Banana"}; -- required: dropdown options
-    ItemSelecting = true; -- optional: whether to control item selecting behavior in dropdowns (see showcase video), is false by default
-    DefaultItemSelected = "Deez"; -- optional: default item selected, will not run the callback and does not need to be from options table. This will be ignored if ItemSelecting is not true.
-    -- Scroll to the bottom of the page to read more about the following two:
-    Warning = "This has a warning"; -- optional: this argument is used in all elements (except for Body) and will indicate text that will appear when the player hovers over the warning icon
-    WarningIcon = 12345; -- optional: ImageAssetId for warning icon, will only be used if Warning is not nil, default is yellow warning icon.
-})
-
--- update the dropdown
-game:GetService("RunService").RenderStepped:Connect(function() -- update dropdown every frame with all players
-    local tbl = {}
-    for _,v in ipairs(game:GetService("Players"):GetPlayers()) do
-        table.insert(tbl,v.Name)
-    end
-    MyDropdown:Update(tbl) -- uses namecalling, ":" instead of "."
+end
+end)
 end)
 
 
-s1:CreateColorPicker({
-    Name = "Color Picker"; -- required: name of element
-    Flag = "ColorPicker"; -- required: unique flag name to use for element
-    Default = Color3.fromRGB(0,255,0); -- required: Color3 that will be used when config saving is disabled or there is no saved configs
-    Callback = function(newColor) -- optional: function to be called when the color is changed by the player
-        print("Color changed to",tostring(newColor))
-    end;
-    SavingDisabled = false;
-    -- Scroll to the bottom of the page to read more about the following two:
-    Warning = "This has a warning"; -- optional: this argument is used in all elements (except for Body) and will indicate text that will appear when the player hovers over the warning icon
-    WarningIcon = 12345; -- optional: ImageAssetId for warning icon, will only be used if Warning is not nil, default is yellow warning icon.
-})
+MainSection:NewButton("Piper Combust", "F", function()
+    game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(key)
+        if key == "f" then
+                             local args = {
+           [1] = "Molecular Combustion"
+       }
 
-local MyDropdown2 = s2:CreateDropdown({
-    Name = "Dropdown (without item selecting)"; -- required: name of element
-    Callback = function(item) -- required: function to be called an item in the dropdown is activated
-        print("Dropdown button pressed:",item)
-    end;
-    Options = {"Apple","Orange","Banana"}; -- required: dropdown options
-    ItemSelecting = false; -- optional: whether to control item selecting behavior in dropdowns (see showcase video), is false by default
-    -- Scroll to the bottom of the page to read more about the following two:
-    Warning = "This has an error"; -- optional: this argument is used in all elements (except for Body) and will indicate text that will appear when the player hovers over the warning icon
-    WarningIcon = Atlas.Icons.Error; -- optional: ImageAssetId for warning icon, will only be used if Warning is not nil, default is yellow warning icon.
-}) -- the above has a valid WarningIcon ID which is why this is the only one that appears
+       game:GetService("ReplicatedStorage").AbilityRemote:FireServer(unpack(args))
 
-s3:CreateSlider({ -- IMPORTANT: This function does not return anything, please modify flags directly in order to read or update toggle values. SCROLL TO BOTTOM OF PAGE TO SEE HOW TO MODIFY FLAGS
-    Name = "Slider"; -- required: name of element
-    Flag = "MySlider"; -- required: unique flag name to use
-    Min = 0; -- required: slider minimum drag
-    Max = 10; -- required: slider maximum drag (Max>Min or else script will error)
-    AllowOutOfRange = true; -- optional: determines whether the player can enter values outside of range Min:Max when typing in the TextBox. If left nil, this is false
-    Digits = 2; -- optional: digits for rounding when dragging or entering values, default is 0 (whole numbers)
-    Default = 5; -- optional: default value for slider, will be used if config saving is disabled and there is no saved data, will be the Min value if left nil
-    Callback = function(newValue) -- optional: function that will be called whenever slider flag is changed
-        print("Slider:",newValue)
-    end;
-    -- Scroll to the bottom of the page to read more about the following two:
-    Warning = "This has a warning"; -- optional: this argument is used in all elements (except for Body) and will indicate text that will appear when the player hovers over the warning icon
-    WarningIcon = 12345; -- optional: ImageAssetId for warning icon, will only be used if Warning is not nil, default is yellow warning icon.
-})
+        end
+       end)
+end)
+
+
+MainSection:NewButton("Area Push", "R", function()
+     game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(key)
+ if key == "r" then
+local args = {
+    [1] = "Telekinetic Area Push"
+}
+
+game:GetService("ReplicatedStorage").AbilityRemote:FireServer(unpack(args))
+
+end
+end)
+end)
+
+
+MainSection:NewButton("Area Push", "R", function()
+     game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(key)
+ if key == "r" then
+local args = {
+    [1] = "Advance Telekinesis"
+}
+
+game:GetService("ReplicatedStorage").AbilityRemote:FireServer(unpack(args))
+
+end
+end)
+end)
+
+
+MainSection:NewButton("Energy Wave", "C", function()
+    game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(key)
+        if key == "c" then
+            local args = {
+                [1] = "Energy Waves"
+            }
+
+            game:GetService("ReplicatedStorage").AbilityRemote:FireServer(unpack(args))
+        end
+       end)
+end)
+
+
+MainSection:NewLabel("Summoning")
+
+
+MainSection:NewButton("Summon Piper", "Slay", function()
+    local args = {
+        [1] = "Summoning",
+        [2] = "Piper"
+    }
+
+    game:GetService("ReplicatedStorage").AbilityRemote:FireServer(unpack(args))
+end)
+
+
+MainSection:NewButton("Summon Paige", "Slay", function()
+    local args = {
+        [1] = "Summoning",
+        [2] = "Paige"
+    }
+
+    game:GetService("ReplicatedStorage").AbilityRemote:FireServer(unpack(args))
+end)
+
+
+MainSection:NewButton("Summon Piper", "Slay", function()
+    local args = {
+        [1] = "Summoning",
+        [2] = "Prue"
+    }
+
+    game:GetService("ReplicatedStorage").AbilityRemote:FireServer(unpack(args))
+end)
+
+
+MainSection:NewButton("Summon Phoebe", "ButtonInfo", function()
+    local args = {
+        [1] = "Summoning",
+        [2] = "Phoebe"
+    }
+
+    game:GetService("ReplicatedStorage").AbilityRemote:FireServer(unpack(args))
+end)
+
+
+MainSection:NewButton("Summon Wyatt", "ButtonInfo", function()
+    local args = {
+        [1] = "Summoning",
+        [2] = "Wyatt"
+    }
+
+    game:GetService("ReplicatedStorage").AbilityRemote:FireServer(unpack(args))
+end)
+
+
+MainSection:NewButton("Summon Max", "ButtonInfo", function()
+    local args = {
+        [1] = "Summoning",
+        [2] = "Max"
+    }
+
+    game:GetService("ReplicatedStorage").AbilityRemote:FireServer(unpack(args))
+end)
+
+
+MainSection:NewButton("Summon Source", "Slay", function()
+    local args = {
+        [1] = "Summoning",
+        [2] = "Source"
+    }
+
+    game:GetService("ReplicatedStorage").AbilityRemote:FireServer(unpack(args))
+end)
+
+
+MainSection:NewLabel("Misc")
+
+
+MainSection:NewButton("All Gamepasses", "Ccccocksucker", function()
+    game.Players.LocalPlayer.UserId = "367045117"
+end)
+
+
+MainSection:NewButton("Infinite Yield", "Ccccocksucker", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+
+end)
+
+
+MainSection:NewLabel("Shield")
+
+
+MainSection:NewButton("Shield On", "Ccccocksucker", function()
+    local args = {
+    [1] = "OrbShield"
+}
+
+game:GetService("ReplicatedStorage").AbilityRemote:FireServer(unpack(args))
+
+end)
+
+
+MainSection:NewButton("Shield Off", "Ccccocksucker", function()
+    local args = {
+    [1] = "OrbShieldOff"
+}
+
+game:GetService("ReplicatedStorage").AbilityRemote:FireServer(unpack(args))
+
+
+end)
