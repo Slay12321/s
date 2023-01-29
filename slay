@@ -47,9 +47,9 @@ end)
 end)
 
 
-MainSection:NewButton("Area Push", "R", function()
+MainSection:NewButton("Advanced Tele", "V", function()
      game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(key)
- if key == "r" then
+ if key == "v" then
 local args = {
     [1] = "Advance Telekinesis"
 }
