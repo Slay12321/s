@@ -97,7 +97,7 @@ MainSection:NewButton("Summon Paige", "Slay", function()
 end)
 
 
-MainSection:NewButton("Summon Piper", "Slay", function()
+MainSection:NewButton("Summon Prue", "Slay", function()
     local args = {
         [1] = "Summoning",
         [2] = "Prue"
@@ -154,6 +154,11 @@ MainSection:NewButton("Summon Shax", "Slay", function()
     }
 
     game:GetService("ReplicatedStorage").AbilityRemote:FireServer(unpack(args))
+end)
+
+
+MainSection:NewButton("Summon All", "Hungry Hungry Hippo", function()
+     game.Players.LocalPlayer:Kick(“Fag Dont Be So Hungry”)
 end)
 
 
