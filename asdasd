@@ -1,8 +1,9 @@
-local HWIDTable = loadstring(game:HttpGet("https://pastebin.com/raw/zqjewQQy"))()
-local HWID = game:GetService("RbxAnalyticsService"):GetClientId()
+local HWIDTable = loadstring(game:HttpGet("https://pastebin.com/zqjewQQy"))()
+local HWID = game:GetSerivce("RbxAnalyticsService"):GetClientId()
 
-for i,v in pairs(HWIDTable) do
+for i,v in pairs(HwidTable) do
     if v == HWID then
-        print("Hardware ID Passed, Whitelist By Noah#4750")
+        print("Hrdware ID Passed, Loading Gui...")
         loadstring(game:HttpGet(('https://raw.githubusercontent.com/Slay12321/s/main/slay'),true))()
     end
+end
