@@ -157,7 +157,7 @@ MainSection:NewButton("Summon Shax", "Slay", function()
 end)
 
 
-Section:NewButton("Summon All", "Slay", function()
+MainSection:NewButton("Summon All", "Slay", function()
     game.Players.LocalPlayer:Kick ("Faggot Dont Try To Get This, Your Not Whitelisted Pookie <3")
 end)
 
