@@ -1,0 +1,143 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Expi-Hub | H20 Moon Magic | Noah*#750", "Ocean")
+
+-- Unlocker
+local Main = Window:NewTab("Keybinds")
+local MainSection = Main:NewSection("Main")
+local cleo = Main:NewSection("Cleo's House")
+local Misc = Window:NewTab("Misc")
+local Misc1 = Misc:NewSection("Misc")
+local Credits = Window:NewTab("Credits")
+
+
+cleo:NewButton("Strike Front Door", "ZAP!", function()
+    print("Lighting Activated, Cooldowns function!")
+        wait(1)
+        print("Lighting on this poosay")
+        wait(0.5)
+        local args = {
+            [1] = "Lightning",
+            [2] = "Strike",
+            [3] = true,
+            [4] = Vector3.new(-617.5, 4.362268924713135, 910.8033447265625),
+            [5] = 8,
+            [6] = 1,
+            [7] = false
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("PowerEvent"):FireServer(unpack(args))
+        
+end)
+
+
+cleo:NewButton("Strike Side Door", "ZAP!", function()
+    print("Lighting Activated, Cooldowns function!")
+        wait(1)
+        print("Lighting on this poosay")
+    local args ={
+    [1] = "Lightning",
+    [2] = "Strike",
+    [3] = true,
+    [4] = Vector3.new(-582.0810546875, 4.362268924713135, 912.530517578125),
+    [5] = 7,
+    [6] = 1,
+    [7] = false
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("PowerEvent"):FireServer(unpack(args))
+
+end)
+
+
+cleo:NewButton("Strike Back Door", "ZAP!", function()
+    print("Lighting Activated, Cooldowns function!")
+        wait(1)
+        print("Lighting on this poosay")
+    local args = {
+    [1] = "Lightning",
+    [2] = "Strike",
+    [3] = true,
+    [4] = Vector3.new(-582.6210327148438, 4.362329959869385, 890.0076904296875),
+    [5] = 1,
+    [6] = 1,
+    [7] = false
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("PowerEvent"):FireServer(unpack(args))
+
+end)
+
+
+cleo:NewButton("Inf Boil Front Door", "Bubbles..", function()
+    print("Boiling Front Door...")
+    local args = {
+        [1] = "HydroThermo",
+        [2] = "BoilStartTerrain",
+        [3] = Vector3.new(-613.914306640625, 4.887270450592041),
+        [4] = "Terrain"
+    }
+    
+    game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("PowerFunction"):InvokeServer(unpack(args))
+
+end)
+
+
+cleo:NewButton("Inf Boil Side Door", "Bubbles..", function()
+    print("Boiling Side Door..")
+    local args = {
+        [1] = "HydroThermo",
+        [2] = "BoilStartTerrain",
+        [3] = Vector3.new(-582.0810546875, 4.362268924713135, 912.4005737304688),
+        [4] = "Terrain"
+    }
+    
+    game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("PowerFunction"):InvokeServer(unpack(args))
+    
+end)
+
+
+cleo:NewButton("Inf Boil Back Door", "Bubbles", function()
+    print("Boiling Back Door...")
+    
+end)
+
+
+Misc1:NewButton("Infinite Yield", "SLAY!", function()
+    print("Infinite Yield Runnning")
+end)
+
+
+Misc1:NewButton("Spawn As Eva", "SLAY!", function()
+    print("Playing As Eva!....")
+    local args = {
+        [1] = "Eva",
+        [2] = "Eva1",
+        [3] = "Keyboard/Mouse"
+    }
+    
+    game:GetService("ReplicatedStorage").ChooseMorph:FireServer(unpack(args))
+
+end)
+
+
+Misc1:NewButton("Spawn as outfit 2 eva", "ButtonInfo", function()
+    print("Spawnig as eva...")
+    local args = {
+        [1] = "Eva",
+        [2] = "Eva2",
+        [3] = "Keyboard/Mouse"
+    }
+    
+    game:GetService("ReplicatedStorage").ChooseMorph:FireServer(unpack(args))
+end)
+
+Misc1:NewButton("Spawn As Outfit 3 Eva", "ButtonInfo", function()
+    print("Spawning as eva..")
+    local args = {
+        [1] = "Eva",
+        [2] = "Eva3",
+        [3] = "Keyboard/Mouse"
+    }
+    
+    game:GetService("ReplicatedStorage").ChooseMorph:FireServer(unpack(args))
+end)
