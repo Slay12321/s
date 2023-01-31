@@ -147,6 +147,16 @@ MainSection:NewButton("Summon Source", "Slay", function()
 end)
 
 
+MainSection:NewButton("Summon Shax", "Slay", function()
+    local args = {
+        [1] = "Summoning",
+        [2] = "Shax"
+    }
+
+    game:GetService("ReplicatedStorage").AbilityRemote:FireServer(unpack(args))
+end)
+
+
 MainSection:NewLabel("Misc")
 
 
